@@ -15,7 +15,7 @@ router.get('/selectget', function(req,res) {
     var query = "select * from OT_Department";
 
     request.query(query,function(err,rows) {
-        if (err) {
+        if (err) { 
             res.status(400).json(err);
         }
         else {
