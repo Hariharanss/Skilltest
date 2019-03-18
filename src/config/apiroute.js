@@ -12,7 +12,7 @@ var request = new db.Request();
 
 router.get('/selectget', function(req,res) {
 
-    var query = "select * from OT_Department";
+    var query = "select * from OT_Department ";
 
     request.query(query,function(err,rows) {
         if (err) {
