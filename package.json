@@ -1,9 +1,10 @@
 {
   "name": "skilltest",
   "version": "0.0.0",
+  "main": "server.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng build --prod  && nodemon server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -20,6 +21,11 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
+    "http": "0.0.0",
+    "mssql": "^5.0.3",
+    "nodemon": "^1.18.10",
+    "path": "^0.12.7",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
