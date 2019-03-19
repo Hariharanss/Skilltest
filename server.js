@@ -7,12 +7,6 @@ var redirectroutes = require('./src/config/apiroute');
 
 app.use(express.static(path.join(__dirname, 'dist/Skilltest')));
 
-
-app.use(function (err, req, res, next) {
-    console.error(err.stack);
-    res.status(500).send('Something went wrong!!');
-  });
-
 app.use('/skillsapi',redirectroutes);
 
 app.get('*', (req, res) => {
