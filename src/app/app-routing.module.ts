@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-// Error handler
-import { GlobalErrorComponent } from '../errorhandler/global-error.component';
-import { PageNotFoundComponent } from '../errorhandler/page-not-found.component';
+import { LoginpageComponent } from './loginpage/loginpage.component';
 
-// Pages
-import { AppComponent } from '../app/app.component';
+import { HomeComponent } from '../app/home.component';
+
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  {path: '', component: AppComponent},
-  {path: 'error', component: GlobalErrorComponent},
-  { path: '**', component: PageNotFoundComponent }
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginpageComponent },
+  { path: '**', redirectTo: ''}
 ];
 
 @NgModule({
